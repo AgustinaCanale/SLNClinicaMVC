@@ -3,14 +3,16 @@ using MVCClinica.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MVCClinica.Migrations
 {
     [DbContext(typeof(DBClinicaMVCContext))]
-    partial class DBClinicaMVCContextModelSnapshot : ModelSnapshot
+    [Migration("20230131015048_prueba3")]
+    partial class prueba3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -20,7 +22,7 @@ namespace MVCClinica.Migrations
 
             modelBuilder.Entity("MVCClinica.Models.Medico", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdMedico")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -36,7 +38,7 @@ namespace MVCClinica.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdMedico");
 
                     b.ToTable("Medicos");
                 });
